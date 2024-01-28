@@ -25,6 +25,10 @@ const MeetingRoomNewForm = () => {
 			.catch((error) => console.error('catch', error));
 	};
 
+	const handleTextChange = (event) => {
+		setMeetingRoom({ ...meetingRoom, [event.target.id]: event.target.value });
+	};
+
 	return <div>MeetingRoomNewForm</div>;
 };
 
