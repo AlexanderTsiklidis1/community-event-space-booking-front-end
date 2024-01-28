@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
+import RoomSearchForm from '../Components/RoomSearchForm';
+import Rooms from '../Components/Rooms';
 
 
 function HomePage() {
-  const [selectedTab, setSelectedTab] = useState('meetingRooms');
-  const handleTabSelect = (tab) => {
-    setSelectedTab(tab);
-  };
-
   return (
     <div>
-      <MeetingRoomSearchForm/>
-      <MeetingRooms/>
+      <RoomSearchForm/>
+      <Rooms/>
     </div>
   );
 };
