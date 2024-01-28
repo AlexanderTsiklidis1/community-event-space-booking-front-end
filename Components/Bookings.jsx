@@ -6,7 +6,7 @@ const API = import.meta.env.VITE_API_URL;
 function Bookings() {
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
-    fetch(`${API}/setBookings`)
+    fetch(`${API}/Bookings`)
       .then(response => response.json())
       .then((responseJSON) => {
         console.log(responseJSON);
