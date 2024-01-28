@@ -17,7 +17,7 @@ function MeetingRoomDetails() {
     fetch(`${API}/meetingRoom/${id}`)
     .then((response) => response.json())
     .then((responseJSON) => {
-      setBookmark(responseJSON)
+      setMeetingRoom(responseJSON)
     })
     .catch(error => console.log(error))
   }, [id, API])
