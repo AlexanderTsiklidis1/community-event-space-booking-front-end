@@ -23,7 +23,7 @@ function MeetingRoomSearchForm() {
   return (
     <div>
       <div>
-        <h2>Title of Find Available Rooms</h2>
+        <h2></h2>
         <form onSubmit={handleSearchSubmit}>
           <div>
             <label>Start:</label>
