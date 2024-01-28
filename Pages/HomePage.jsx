@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import MeetingRoomSearchForm from '../Components/MeetingRoomSearchForm';
-import MeetingRooms from '../Components/MeetingRooms';
+
 
 function HomePage() {
   const [selectedTab, setSelectedTab] = useState('meetingRooms');

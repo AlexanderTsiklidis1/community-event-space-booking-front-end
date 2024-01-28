@@ -4,8 +4,8 @@ import Bookings from "./Bookings";
 import BookingForm from "./BookingForm"
 const API = import.meta.env.VITE_API_URL
 
-function MeetingRoomDetails() {
-  const [meetingRoom, setMeetingRoom] = useState({
+function RoomDetails() {
+  const [room, setRoom] = useState({
     name: '',
     capacity: '',
     floor: '',
@@ -14,10 +14,10 @@ function MeetingRoomDetails() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(`${API}/meetingRoom/${id}`)
+    fetch(`${API}/room/${id}`)
     .then((response) => response.json())
     .then((responseJSON) => {
-      setMeetingRoom(responseJSON)
+      setRoom(responseJSON)
     })
     .catch(error => console.log(error))
   }, [id, API])
@@ -33,12 +33,12 @@ function MeetingRoomDetails() {
 //     .catch(error => console.log(error))
 //   }
   return (
-    <><h2>{meetingRoom.name}</h2>
-    <p>Capacity: {meetingRoom.capacity}</p>
-    <p>Floor: {meetingRoom.floor}</p>
+    <><h2>{room.name}</h2>
+    <p>Capacity: {room.capacity}</p>
+    <p>Floor: {room.floor}</p>
     <BookingForm />
     <Bookings /></>
   );
 }
 
-export default MeetingRoomDetails;
+export default RoomDetails;

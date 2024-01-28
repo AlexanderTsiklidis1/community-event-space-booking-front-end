@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import room from "./room";
+import Room from "./Room";
 
 const API = import.meta.env.VITE_API_URL;
 
