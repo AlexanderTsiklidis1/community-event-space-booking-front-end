@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-function MeetingRoomSearchForm() {
-  const [searchData, setSearchData] = useState({
+function RoomSearchForm() {
+  const [room, setRoom] = useState({
     startDate: '',
     startTime: '',
     endDate: '',
@@ -12,7 +12,7 @@ function MeetingRoomSearchForm() {
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
-    setSearchData({ ...searchData, [id]: value });
+    setRoom({ ...room, [id]: value });
   };
 
   const handleSearchSubmit = (event) => {
@@ -50,4 +50,4 @@ function MeetingRoomSearchForm() {
   );
 }
 
-export default MeetingRoomSearchForm;
+export default RoomSearchForm;
