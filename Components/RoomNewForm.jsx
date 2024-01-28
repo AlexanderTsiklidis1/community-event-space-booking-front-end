@@ -3,18 +3,18 @@ import { useNavigate } from 'react-router-dom';
 
 const API = import.meta.env.VITE_BASE_URL;
 
-const MeetingRoomNewForm = () => {
+const RoomNewForm = () => {
 	const navigate = useNavigate();
-	const [meetingRoom, setMeetingRoom] = useState({
+	const [room, setRoom] = useState({
 		room_name: '',
 		floor: '',
 		capacity: '',
 	});
 
-	const addMeetingRoom = () => {
+	const addRoom = () => {
 		fetch(`${API}/rooms`, {
 			method: 'POST',
-			body: JSON.stringify(meetingRoom),
+			body: JSON.stringify(room),
 			headers: {
 				'Content-Type': 'application/json',
 			},
@@ -26,12 +26,12 @@ const MeetingRoomNewForm = () => {
 	};
 
 	const handleTextChange = (event) => {
-		setMeetingRoom({ ...meetingRoom, [event.target.id]: event.target.value });
+		setRoom({ ...room, [event.target.id]: event.target.value });
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		addMeetingRoom();
+		addRoom();
 	};
 
 	return (
@@ -40,7 +40,7 @@ const MeetingRoomNewForm = () => {
 				<label htmlFor='room_name'>Room Name:</label>
 				<input
 					id='room_name'
-					value={meetingRoom.room_name}
+					value={room.room_name}
 					type='text'
 					onChange={handleTextChange}
 					placeholder='Room Name'
@@ -49,7 +49,7 @@ const MeetingRoomNewForm = () => {
 				<label htmlFor='floor'>Floor:</label>
 				<input
 					id='floor'
-					value={meetingRoom.floor}
+					value={room.floor}
 					type='number'
 					onChange={handleTextChange}
 					placeholder='Floor Number'
@@ -58,7 +58,7 @@ const MeetingRoomNewForm = () => {
 				<label htmlFor='capacity'>Capacity:</label>
 				<input
 					id='capacity'
-					value={meetingRoom.capacity}
+					value={room.capacity}
 					type='number'
 					onChange={handleTextChange}
 					placeholder='Capacity'
@@ -71,4 +71,4 @@ const MeetingRoomNewForm = () => {
 	);
 };
 
-export default MeetingRoomNewForm;
+export default RoomNewForm;
