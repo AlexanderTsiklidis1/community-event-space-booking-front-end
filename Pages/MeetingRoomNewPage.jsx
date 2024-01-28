@@ -1,6 +1,6 @@
 import MeetingRoomNewForm from "../Components/MeetingRoomNewForm";
 
-function NewPage() {
+function MeetingRoomNewPage() {
   return (
     <div className="New">
       <h2>New</h2>
@@ -9,4 +9,4 @@ function NewPage() {
   );
 }
 
-export default NewPage;
+export default MeetingRoomNewPage;
