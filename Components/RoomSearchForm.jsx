@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function RoomSearchForm() {
-  const [room, setRoom] = useState({
+  const [searchData, setSearchData] = useState({
     startDate: '',
     startTime: '',
     endDate: '',
@@ -12,7 +12,7 @@ function RoomSearchForm() {
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
-    setRoom({ ...room, [id]: value });
+    setSearchData({ ...searchData, [id]: value });
   };
 
   const handleSearchSubmit = (event) => {
