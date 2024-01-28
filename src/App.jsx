@@ -2,11 +2,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import MeetingRoomNewPage from "./Pages/MeetingRoomNewPage";
 import FourOFour from "./Pages/FourOFour";
+import NavBar from "../Components/NavBar";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <NavBar/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/rooms/new" element={<MeetingRoomNewPage />} />
