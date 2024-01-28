@@ -4,6 +4,27 @@ import { useNavigate } from 'react-router-dom';
 const API = import.meta.env.VITE_BASE_URL;
 
 const MeetingRoomNewForm = () => {
+	const navigate = useNavigate();
+	const [meetingRoom, setMeetingRoom] = useState({
+		room_name: '',
+		floor: '',
+		capacity: '',
+	});
+
+	const addMeetingRoom = () => {
+		fetch(`${API}/rooms`, {
+			method: 'POST',
+			body: JSON.stringify(meetingRoom),
+			headers: {
+				'Content-Type': 'application/json',
+			},
+		})
+			.then(() => {
+				navigate(`/rooms`);
+			})
+			.catch((error) => console.error('catch', error));
+	};
+
 	return <div>MeetingRoomNewForm</div>;
 };
 
