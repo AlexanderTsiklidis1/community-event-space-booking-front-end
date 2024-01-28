@@ -28,46 +28,47 @@ function BookingForm({ bookingDetails, handleSubmit, toggleView, children }) {
 
     return (
         <form onSubmit={onSubmit}>
-        <h2>Find available rooms:</h2>
-        <div>
+          <h2>Book Room:</h2>
+          <div>
+            <label htmlFor="meetingName">Meeting Name:</label>
+            <input
+              type="text"
+              id="meetingName"
+              value={booking.meetingName}
+              onChange={handleTextChange}
+            />
+          </div>
+          <div>
             <label htmlFor="start">Start:</label>
             <input
-            type="datetime-local"
-            id="start"
-            value={booking.start}
-            onChange={handleTextChange}
+              type="datetime-local"
+              id="start"
+              value={booking.start}
+              onChange={handleTextChange}
             />
-        </div>
-        <div>
+          </div>
+          <div>
             <label htmlFor="end">End:</label>
             <input
-            type="datetime-local"
-            id="end"
-            value={booking.end}
-            onChange={handleTextChange}
+              type="datetime-local"
+              id="end"
+              value={booking.end}
+              onChange={handleTextChange}
             />
-        </div>
-        <div>
-            <label htmlFor="floor">Floor:</label>
+          </div>
+          <div>
+            <label htmlFor="attendees">Attendees:</label>
             <input
-            type="text"
-            id="floor"
-            value={booking.floor}
-            onChange={handleTextChange}
+              type="text"
+              id="attendees"
+              value={booking.attendees}
+              onChange={handleTextChange}
             />
-        </div>
-        <div>
-            <label htmlFor="capacity">Capacity:</label>
-            <input
-            type="text"
-            id="capacity"
-            value={booking.capacity}
-            onChange={handleTextChange}
-            />
-        </div>
-        <button type="submit">Find</button>
+          </div>
+          <button type="submit">Submit</button>
         </form>
-    );
+      );
+      
 }
 
 export default BookingForm;
