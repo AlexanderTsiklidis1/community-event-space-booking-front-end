@@ -10,7 +10,6 @@ function HomePage() {
 
   return (
     <div>
-      { /* Top Section with Tabs */ }
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div onClick={() => handleTabSelect('meetingRooms')}>Meeting Rooms</div>
         <div onClick={() => handleTabSelect('bookings')}>Bookings</div>
