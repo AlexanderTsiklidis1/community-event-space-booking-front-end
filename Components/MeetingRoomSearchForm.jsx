@@ -1,50 +1,53 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-const API = import.meta.env.VITE_BASE_URL;
+import React, { useState } from "react";
 
 function MeetingRoomSearchForm() {
-    const [startDate, setStartDate] = useState('');
-    const [startTime, setStartTime] = useState('');
-    const [endDate, setEndDate] = useState('');
-    const [endTime, setEndTime] = useState('');
-    const [floor, setFloor] = useState('');
-    const [capacity, setCapacity] = useState('');
+  const [searchData, setSearchData] = useState({
+    startDate: '',
+    startTime: '',
+    endDate: '',
+    endTime: '',
+    floor: '',
+    capacity: '',
+  });
 
-    
+  const handleInputChange = (event) => {
+    const { id, value } = event.target;
+    setSearchData({ ...searchData, [id]: value });
+  };
+
   const handleSearchSubmit = (event) => {
     event.preventDefault();
-    
-    console.log('Search Submitted:', { startDate, startTime, endDate, endTime, floor, capacity });
-    return(
-        <div>
-            <div>
-                <h2>Title of Find Available Rooms</h2>
-                <form onSubmit={handleSearchSubmit}>
-                <div>
-                <label>Date and Time Start:</label>
-                <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
-                <input type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
-                </div>
-                <div>
-                <label>Date and Time End:</label>
-                <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
-                <input type="time" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
-                </div>
-                <div>
-                <label>Floor:</label>
-                <input type="text" value={floor} onChange={(e) => setFloor(e.target.value)} />
-                </div>
-                <div>
-                <label>Capacity:</label>
-                <input type="number" value={capacity} onChange={(e) => setCapacity(e.target.value)} />
-                </div>
-                <button type="submit">Search</button>
-            </form>
-            </div>
-        </div>
-    )
+    console.log('Search Submitted:', searchData);
   };
+
+  return (
+    <div>
+      <div>
+        <h2>Title of Find Available Rooms</h2>
+        <form onSubmit={handleSearchSubmit}>
+          <div>
+            <label>Start:</label>
+            <input type="date" id="startDate" value={searchData.startDate} onChange={handleInputChange} />
+            <input type="time" id="startTime" value={searchData.startTime} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label>End:</label>
+            <input type="date" id="endDate" value={searchData.endDate} onChange={handleInputChange} />
+            <input type="time" id="endTime" value={searchData.endTime} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label>Floor:</label>
+            <input type="text" id="floor" value={searchData.floor} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label>Capacity:</label>
+            <input type="number" id="capacity" value={searchData.capacity} onChange={handleInputChange} />
+          </div>
+          <button type="submit">Find</button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default MeetingRoomSearchForm;
