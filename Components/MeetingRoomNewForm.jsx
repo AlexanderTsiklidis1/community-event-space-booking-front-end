@@ -34,7 +34,41 @@ const MeetingRoomNewForm = () => {
 		addMeetingRoom();
 	};
 
-	return <div>MeetingRoomNewForm</div>;
+	return (
+		<div>
+			<form onSubmit={handleSubmit}>
+				<label htmlFor='room_name'>Room Name:</label>
+				<input
+					id='room_name'
+					value={meetingRoom.room_name}
+					type='text'
+					onChange={handleTextChange}
+					placeholder='Room Name'
+					required
+				/>
+				<label htmlFor='floor'>Floor:</label>
+				<input
+					id='floor'
+					value={meetingRoom.floor}
+					type='number'
+					onChange={handleTextChange}
+					placeholder='Floor Number'
+					required
+				/>
+				<label htmlFor='capacity'>Capacity:</label>
+				<input
+					id='capacity'
+					value={meetingRoom.capacity}
+					type='number'
+					onChange={handleTextChange}
+					placeholder='Capacity'
+					required
+				/>
+				<br />
+				<input type='submit' />
+			</form>
+		</div>
+	);
 };
 
 export default MeetingRoomNewForm;
