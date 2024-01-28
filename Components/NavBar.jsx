@@ -3,16 +3,10 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
     <nav className="navbar">
-      <div className="nav-links">
-        <Link to="/home" className="nav-link">
-        Meeting Rooms
-        </Link>
-        <Link to="/bookings" className="nav-link">
-          Bookings
-        </Link>
-        <Link to="/rooms/new" className="nav-link">
-         New Room
-        </Link>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Link to="/"><div onClick={() => handleTabSelect('meetingRooms')}>Meeting Rooms</div></Link>
+        <Link to="/bookings"><div onClick={() => handleTabSelect('bookings')}>Bookings</div></Link>
+       <Link to ="/rooms/new"><div onClick={() => handleTabSelect('newRoom')}>New Room</div></Link>
       </div>
     </nav>
   );
