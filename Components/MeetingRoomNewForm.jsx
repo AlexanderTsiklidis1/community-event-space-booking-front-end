@@ -29,6 +29,11 @@ const MeetingRoomNewForm = () => {
 		setMeetingRoom({ ...meetingRoom, [event.target.id]: event.target.value });
 	};
 
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		addMeetingRoom();
+	};
+
 	return <div>MeetingRoomNewForm</div>;
 };
 
