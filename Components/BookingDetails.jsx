@@ -17,6 +17,17 @@ const BookingDetails = () => {
 			.catch((error) => console.log(error));
 	}, [id, API]);
 
+	const handleDelete = () => {
+		deleteBooking();
+	};
+
+	const deleteBooking = () => {
+		const httpOptions = { method: 'DELETE' };
+		fetch(`${API}/bookings/${id}`, httpOptions)
+			.then(() => navigate(`/bookings`))
+			.catch((error) => console.log(error));
+	};
+
 	return <div>BookingDetails</div>;
 };
 
