@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Room from "./Room";
-
-const API = import.meta.env.VITE_API_URL;
+import RoomSearchForm from "./RoomSearchForm";
+const API = import.meta.env.VITE_BASE_URL;
 
 function Rooms() {
   const [rooms, setRooms] = useState([]);
@@ -10,7 +10,7 @@ function Rooms() {
       .then(response => response.json())
       .then((responseJSON) => {
         console.log(responseJSON);
-        setRooms(responseJSON.data.payload);
+        setRooms(responseJSON);
       })
       .catch((error) => {
         console.log(error);
@@ -18,6 +18,7 @@ function Rooms() {
     }, []);
   return (
     <div className="rooms">
+      <RoomSearchForm/>
       {rooms.map((room) => {
         return <Room key={room.id} room={room}/>
       })}

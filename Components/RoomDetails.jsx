@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Bookings from "./Bookings";
-import BookingForm from "./BookingForm"
+// import BookingForm from "./BookingForm"
 const API = import.meta.env.VITE_API_URL
 
 function RoomDetails() {
@@ -36,7 +36,6 @@ function RoomDetails() {
     <><h2>{room.name}</h2>
     <p>Capacity: {room.capacity}</p>
     <p>Floor: {room.floor}</p>
-    <BookingForm />
     <Bookings /></>
   );
 }
