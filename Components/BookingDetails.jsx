@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const API = import.meta.env.VITE_BASE_URL;
 
@@ -28,7 +28,17 @@ const BookingDetails = () => {
 			.catch((error) => console.log(error));
 	};
 
-	return <div>BookingDetails</div>;
+	return (
+		<div>
+			<h3>{booking.booking_name}</h3>
+			<br />
+			<br />
+			<p>Start: {booking.start_time}</p>
+			<p>End: {booking.end_time}</p>
+			<br />
+			<button onClick={handleDelete}>Cancel</button>
+		</div>
+	);
 };
 
 export default BookingDetails;
