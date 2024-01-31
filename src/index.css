@@ -360,3 +360,22 @@
   .booking-details-cancel:hover {
     background-color: #c82333; 
   }
+
+  @media only screen and (max-width: 768px) {
+    .navbar div {
+        margin: 0 5px;
+        padding: 5px 8px;
+    }
+
+   
+    .room-search-form {
+        padding: 10px;
+    }
+
+    
+    .booking-card-container,
+    .room-card-container,
+    .booking-form {
+        width: 100%;
+    }
+}
