@@ -35,7 +35,7 @@ const BookingDetails = () => {
 			<h3>{booking.booking_name}</h3>
 			<p>Start: {booking.start_time}</p>
 			<p>End: {booking.end_time}</p>
-			<p>floor:{booking.floor}</p>
+			<p>Floor:{booking.floor}</p>
 			<button onClick={handleDelete}>Cancel</button>
 		</div>
 	);

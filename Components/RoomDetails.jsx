@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import Bookings from "./Bookings";
 import BookingForm from "./BookingForm"
 const API = import.meta.env.VITE_BASE_URL
 
@@ -32,9 +31,9 @@ function RoomDetails() {
 //     .catch(error => console.log(error))
 //   }, [id, navigate])
 
-//   const handleDelete = () => {
-//     deleteMeetingRoom()
-//   }
+  const handleDelete = () => {
+    deleteBooking()
+  }
 
 //   const deleteMeetingRoom = () => {
 //     const httpOptions = { method: "DELETE" }
@@ -42,25 +41,33 @@ function RoomDetails() {
 //     .then(() => navigate(`/meetingRooms`))
 //     .catch(error => console.log(error))
 //   }
-  return (
-    <><h2>{room.room_name}</h2>
-    <p>Capacity: {room.capacity}</p>
-    <p>Floor: {room.floor}</p>
-    <BookingForm/>
+return (
+  <div className="room-details-container">
+    <h2 className="room-details-title">{room.room_name}</h2>
+    <p className="room-details-text">Capacity: {room.capacity}</p>
+    <p className="room-details-floor">Floor: {room.floor}</p>
+    <BookingForm />
     <ul>
-        {bookings.map((booking) => {
-          return (
+      {bookings.map((booking) => {
+        return (
+          <Link to={`/rooms/${id}/bookings/${booking.id}`} key={booking.id}>
             <li>
-              <Link to={`/rooms/${id}/bookings/${booking.id}`}>{
-                booking.booking_name
-              }
-              </Link>
+              <div className="booking-card-container">
+                <h3 className="booking-card-title">{booking.booking_name}</h3>
+                <p className="booking-card-text">Start: {booking.start_time}</p>
+                <p className="booking-card-text">End: {booking.end_time}</p>
+                <p className="booking-card-text">Floor: {booking.floor}</p>
+                <p className="booking-card-text">Attendees: {booking.attendees}</p>
+                <button className="booking-card-button" onClick={handleDelete}>Cancel</button>
+              </div>
             </li>
-          );
-        })}
-      </ul>
-    </>
-  );
+          </Link>
+        );
+      })}
+    </ul>
+  </div>
+);
 }
+
 
 export default RoomDetails;
