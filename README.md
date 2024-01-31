@@ -15,10 +15,10 @@ One table is for the event rooms and the other is for event bookings.
 
 ## Team Members:
 
-- Alexander Tsiklidis [LinkedIn](https://www.linkedin.com/in/alexandertsiklidis/)
-- Anthony Huarneck [LinkedIn](https://www.linkedin.com/in/anthonyhuarneck/)
-- Michael Kleemoff [LinkedIn](https://www.linkedin.com/in/michael-kleemoff-jr/)
-- Aisha Kleemoff [LinkedIn](https://www.linkedin.com/in/aisha-kleemoff-16b49122b/)
+- Alexander Tsiklidis [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alexandertsiklidis/)
+- Anthony Huarneck [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anthonyhuarneck/)
+- Michael Kleemoff [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/michael-kleemoff-jr/)
+- Aisha Kleemoff [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aisha-kleemoff-16b49122b/)
 
 ## Technologies:
 
