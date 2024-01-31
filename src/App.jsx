@@ -6,8 +6,8 @@ import FourOFour from "../Pages/FourOFourPage";
 import NavBar from "../Components/NavBar";
 import RoomShowPage from "../Pages/RoomShowPage"
 import BookingsPage from "../Pages/BookingsPage";
-import BookingShowPage2 from "../Pages/BookingShowPage2"
-import BookingShowPage from "../Pages/BookingShowPage"
+import BookingShowPage2 from "../Pages/BookingShowPage2";
+import BookingShowPage from "../Pages/BookingShowPage";
 
 function App() {
   return (

@@ -20,7 +20,7 @@ const RoomNewForm = () => {
 			},
 		})
 			.then(() => {
-				navigate(`/rooms`);
+				navigate(`/`);
 			})
 			.catch((error) => console.error('catch', error));
 	};
