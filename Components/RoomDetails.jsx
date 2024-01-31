@@ -23,7 +23,7 @@ const handleDelete = () => {
 }
 const deleteBooking = () => {
     const httpOptions = { method: "DELETE" };
-    fetch(`${API}/rooms/${id}/bookings`, httpOptions)
+    fetch(`${API}/bookings/${id}/`, httpOptions)
       .then((res) => {
         console.log(res);
         alert("Booking was deleted successfully!");
