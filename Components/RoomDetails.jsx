@@ -5,6 +5,7 @@ import BookingForm from "./BookingForm"
 const API = import.meta.env.VITE_BASE_URL
 
 function RoomDetails() {
+  const [bookings, setBookings] = useState([]);
   const [room, setRoom] = useState({
     room_name: '',
     floor: '',
@@ -14,9 +15,21 @@ function RoomDetails() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    fetch(`${API}/rooms/${id}/bookings`)
+    .then((response) => response.json())
+    .then((responseJSON) => {
+      console.log(responseJSON)
+      setBookings(responseJSON)
+    })
+    .catch(error => console.log(error))
+  }, [id, navigate])
+
+
+  useEffect(() => {
     fetch(`${API}/rooms/${id}`)
     .then((response) => response.json())
     .then((responseJSON) => {
+      console.log(responseJSON)
       setRoom(responseJSON)
     })
     .catch(error => console.log(error))
@@ -37,6 +50,16 @@ function RoomDetails() {
     <p>Capacity: {room.capacity}</p>
     <p>Floor: {room.floor}</p>
     <BookingForm/>
+    <ul>
+        {bookings.map((booking) => {
+          return (
+            <li>
+              <Link to={`/rooms/${id}/bookings/${booking.id}`}>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 }
