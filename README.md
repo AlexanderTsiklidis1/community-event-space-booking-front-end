@@ -6,9 +6,9 @@
 
 ### We created an Event Space Booking application where users can:
 
-    #### View event spaces
-    #### Create event spaces
-    #### View bookings
+    * View event spaces
+    * Create event spaces
+    * View bookings
 
 Our application has two tables
 One table is for the event rooms and the other is for event bookings.
