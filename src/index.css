@@ -280,4 +280,83 @@
   .room-new-form-submit:hover {
     background-color: #0056b3; /* Slightly darker blue on hover */
   }
+  /* bookingdetails */
+  .booking-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff; /* White background */
+  }
   
+  .booking-details-title {
+    font-size: 24px;
+    color: #333; /* Dark text color */
+    margin-bottom: 20px;
+  }
+  
+  .booking-details-info {
+    margin-bottom: 15px;
+  }
+  
+  .booking-details-info p {
+    margin: 5px 0;
+  }
+  
+  .booking-details-cancel {
+    background-color: #dc3545; /* Bootstrap's danger color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .booking-details-cancel:hover {
+    background-color: #c82333; /* Slightly darker red on hover */
+  }
+  /* bookingdeatils2 */
+  .booking-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #fff; /* White background */
+  }
+  
+  .booking-details-title {
+    font-size: 24px;
+    color: #333; /* Dark text color */
+    margin-bottom: 20px;
+  }
+  
+  .booking-details-info {
+    margin-bottom: 15px;
+  }
+  
+  .booking-details-info p {
+    margin: 5px 0;
+  }
+  
+  .booking-details-cancel {
+    background-color: #dc3545; /* Bootstrap's danger color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .booking-details-cancel:hover {
+    background-color: #c82333; /* Slightly darker red on hover */
+  }
