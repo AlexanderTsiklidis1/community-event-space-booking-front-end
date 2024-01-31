@@ -18,27 +18,19 @@ function RoomDetails() {
       })
       .catch((error) => console.log(error));
   }, [id]);
-
-  const handleDelete = (bookingId) => {
-    deleteBooking(bookingId);
-  };
-
-
-  const deleteBooking = (bookingId) => {
+const handleDelete = () => {
+  deleteBooking()
+}
+const deleteBooking = () => {
     const httpOptions = { method: "DELETE" };
-    fetch(`${API}/bookings/${bookingId}`, httpOptions)
-      .then(() => {
-        // After successful deletion, update the state or refetch bookings
-        // For simplicity, let's just refetch all bookings
-        fetch(`${API}/rooms/${id}/bookings`)
-          .then((response) => response.json())
-          .then((responseJSON) => {
-            setBookings(responseJSON.bookingsByRoom);
-          })
-          .catch((error) => console.log(error));
+    fetch(`${API}/rooms/${id}/bookings`, httpOptions)
+      .then((res) => {
+        console.log(res);
+        alert("Booking was deleted successfully!");
+        navigate('/bookings');
       })
-      .catch((error) => console.log(error));
-  };
+      .catch((err) => console.error(err));
+    };
 
   return (
     <div className="room-details-container">
@@ -57,7 +49,7 @@ function RoomDetails() {
               <p className="booking-card-text">Attendees: {booking.attendees}</p>
               <button
                 className="booking-card-button"
-                onClick={() => handleDelete(booking.id)}
+                onClick={handleDelete}
               >
                 Cancel
               </button>
