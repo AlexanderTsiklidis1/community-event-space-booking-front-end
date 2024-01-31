@@ -188,17 +188,17 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: #fff; /* White background */
+    background-color: #fff; 
   }
   
   .room-details-title {
     margin-bottom: 20px;
-    color: #333; /* Dark text color */
+    color: #333; 
   }
   
   .room-details-text {
     margin: 0;
-    color: #555; /* Slightly darker text color */
+    color: #555; 
   }
   .room-details-floor {
     padding-bottom:2px;
@@ -215,12 +215,12 @@
   
   .booking-card-title {
     margin-bottom: 10px;
-    color: #333; /* Dark text color */
+    color: #333; 
   }
   
   .booking-card-text {
     margin: 0;
-    color: #555; /* Slightly darker text color */
+    color: #555; 
   }
   
   .booking-card-button {
@@ -230,7 +230,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease; 
   }
   
   .booking-card-button:hover {
@@ -239,7 +239,7 @@
   /* roomnewform */
   .new-form-title {
     font-size: 24px;
-    color: #333; /* Dark text color */
+    color: #333; 
     margin-bottom: 20px;
   }
   .room-new-form-container {
@@ -251,12 +251,12 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: #fff; /* White background */
+    background-color: #fff; 
   }
   
   .room-new-form-label {
     margin-bottom: 10px;
-    color: #333; /* Dark text color */
+    color: #333; 
   }
   
   .room-new-form-input {
@@ -268,17 +268,17 @@
   }
   
   .room-new-form-submit {
-    background-color: #007bff; /* Bootstrap's primary blue color */
+    background-color: #007bff; 
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease; 
   }
   
   .room-new-form-submit:hover {
-    background-color: #0056b3; /* Slightly darker blue on hover */
+    background-color: #0056b3; 
   }
   /* bookingdetails */
   .booking-details-container {
@@ -290,12 +290,12 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: #fff; /* White background */
+    background-color: #fff; 
   }
   
   .booking-details-title {
     font-size: 24px;
-    color: #333; /* Dark text color */
+    color: #333; 
     margin-bottom: 20px;
   }
   
@@ -308,17 +308,17 @@
   }
   
   .booking-details-cancel {
-    background-color: #dc3545; /* Bootstrap's danger color */
+    background-color: #dc3545; 
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease; 
   }
   
   .booking-details-cancel:hover {
-    background-color: #c82333; /* Slightly darker red on hover */
+    background-color: #c82333; 
   }
   /* bookingdeatils2 */
   .booking-details-container {
@@ -330,12 +330,12 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: #fff; /* White background */
+    background-color: #fff; 
   }
   
   .booking-details-title {
     font-size: 24px;
-    color: #333; /* Dark text color */
+    color: #333; 
     margin-bottom: 20px;
   }
   
@@ -348,15 +348,15 @@
   }
   
   .booking-details-cancel {
-    background-color: #dc3545; /* Bootstrap's danger color */
+    background-color: #dc3545;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.3s ease;
   }
   
   .booking-details-cancel:hover {
-    background-color: #c82333; /* Slightly darker red on hover */
+    background-color: #c82333; 
   }
