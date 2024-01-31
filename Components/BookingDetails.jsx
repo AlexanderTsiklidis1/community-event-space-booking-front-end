@@ -1,44 +1,49 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
+
 const API = import.meta.env.VITE_BASE_URL;
 
 const BookingDetails = () => {
-	const [booking, setBooking] = useState([]);
-	
-	const { id, bookingId} = useParams();
-	const navigate = useNavigate();
+  const [booking, setBooking] = useState([]);
+  const { id, bookingId } = useParams();
+  const navigate = useNavigate();
 
-	useEffect(() => {
-		fetch(`${API}/rooms/${id}/bookings/${bookingId}`)
-			.then((response) => response.json())
-			.then((responseJSON) => {
-				setBooking(responseJSON);
-				
-			})
-			.catch((error) => console.log(error));
-	}, [id, API]);
+  useEffect(() => {
+    fetch(`${API}/rooms/${id}/bookings/${bookingId}`)
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        setBooking(responseJSON);
+      })
+      .catch((error) => console.log(error));
+  }, [id, API]);
 
-	const handleDelete = () => {
-		deleteBooking();
-	};
+  const handleDelete = () => {
+    deleteBooking();
+  };
 
-	const deleteBooking = () => {
-		const httpOptions = { method: 'DELETE' };
-		fetch(`${API}/bookings/${id}`, httpOptions)
-			.then(() => navigate(`/bookings`))
-			.catch((error) => console.log(error));
-	};
+  const deleteBooking = () => {
+    const httpOptions = { method: 'DELETE' };
+    fetch(`${API}/bookings/${id}`, httpOptions)
+      .then(() => navigate(`/bookings`))
+      .catch((error) => console.log(error));
+  };
 
-	return (
-		<div>
-			<h3>{booking.booking_name}</h3>
-			<p>Start: {booking.start_time}</p>
-			<p>End: {booking.end_time}</p>
-			<p>Floor:{booking.floor}</p>
-			<button onClick={handleDelete}>Cancel</button>
-		</div>
-	);
+  return (
+    <div className="booking-details-container">
+      <h2 className="booking-details-title">Booking Details</h2>
+      <div className="booking-details-info">
+        <h3>{booking.booking_name}</h3>
+        <p>Start: {booking.start_time}</p>
+        <p>End: {booking.end_time}</p>
+        <p>Floor: {booking.floor}</p>
+		<p>Attendees:{booking.attendees}</p>
+      </div>
+      <button onClick={handleDelete} className="booking-details-cancel">
+        Cancel Booking
+      </button>
+    </div>
+  );
 };
 
 export default BookingDetails;
