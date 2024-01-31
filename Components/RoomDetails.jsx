@@ -6,11 +6,7 @@ const API = import.meta.env.VITE_BASE_URL
 
 function RoomDetails() {
   const [bookings, setBookings] = useState([]);
-  const [room, setRoom] = useState({
-    room_name: '',
-    floor: '',
-    capacity: '',
-  });
+  const [room, setRoom] = useState({});
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -19,21 +15,22 @@ function RoomDetails() {
     .then((response) => response.json())
     .then((responseJSON) => {
       console.log(responseJSON)
-      setBookings(responseJSON)
+      setBookings(responseJSON.bookingsByRoom)
+      setRoom(responseJSON.room)
     })
     .catch(error => console.log(error))
-  }, [id, navigate])
+  }, [id])
 
 
-  useEffect(() => {
-    fetch(`${API}/rooms/${id}`)
-    .then((response) => response.json())
-    .then((responseJSON) => {
-      console.log(responseJSON)
-      setRoom(responseJSON)
-    })
-    .catch(error => console.log(error))
-  }, [id, navigate])
+//  useEf fect(() => {
+//     fetch(`${API}/rooms/${id}`)
+//     .then((response) => response.json())
+//     .then((responseJSON) => {
+//       console.log(responseJSON)
+//       setRoom(responseJSON)
+//     })
+//     .catch(error => console.log(error))
+//   }, [id, navigate])
 
 //   const handleDelete = () => {
 //     deleteMeetingRoom()
@@ -54,7 +51,9 @@ function RoomDetails() {
         {bookings.map((booking) => {
           return (
             <li>
-              <Link to={`/rooms/${id}/bookings/${booking.id}`}>
+              <Link to={`/rooms/${id}/bookings/${booking.id}`}>{
+                booking.booking_name
+              }
               </Link>
             </li>
           );
