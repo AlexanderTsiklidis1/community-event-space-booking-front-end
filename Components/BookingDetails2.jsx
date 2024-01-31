@@ -6,18 +6,18 @@ const API = import.meta.env.VITE_BASE_URL;
 const BookingDetails = () => {
 	const [booking, setBooking] = useState([]);
 	
-	const { id, bookingId} = useParams();
+	const { id} = useParams();
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		fetch(`${API}/rooms/${id}/bookings/${bookingId}`)
+		fetch(`${API}/bookings/${id}`)
 			.then((response) => response.json())
 			.then((responseJSON) => {
 				setBooking(responseJSON);
 				
 			})
 			.catch((error) => console.log(error));
-	}, [id, API]);
+	}, [id]);
 
 	const handleDelete = () => {
 		deleteBooking();

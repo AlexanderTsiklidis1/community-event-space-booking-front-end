@@ -6,6 +6,8 @@ import FourOFour from "../Pages/FourOFourPage";
 import NavBar from "../Components/NavBar";
 import RoomShowPage from "../Pages/RoomShowPage"
 import BookingsPage from "../Pages/BookingsPage";
+import BookingShowPage2 from "../Pages/BookingShowPage2"
+import BookingShowPage from "../Pages/BookingShowPage"
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/rooms/:id" element={<RoomShowPage />} />
+          <Route path="/rooms/:id/bookings/:bookingId" element={<BookingShowPage />} />
           <Route path="/bookings" element={<BookingsPage />} />
+          <Route path="/bookings/:id" element={<BookingShowPage2 />} />
           <Route path="/rooms/new" element={<RoomNewPage />} />
           <Route path="*" element={<FourOFour />} />
         </Routes>
